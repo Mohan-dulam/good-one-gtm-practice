@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Lead Form - Good One</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Contact Good One</h2>
+<header>
+  <h1>Good One</h1>
+</header>
 
-<form id="lead-form">
-  <input type="text" name="name" placeholder="Full Name" required><br><br>
-  <input type="email" name="email" placeholder="Email" required><br><br>
+<div class="container">
+  <div class="card">
+    <h2>Contact Us</h2>
 
-  <select name="service">
-    <option value="">Select Service</option>
-    <option>SEO</option>
-    <option>Google Ads</option>
-    <option>SMM</option>
-  </select><br><br>
+    <form id="lead-form" action="thank-you.html">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
 
-  <button type="submit" id="submit-lead">Submit</button>
-</form>
+      <select name="service" required>
+        <option value="">Select Service</option>
+        <option value="SEO">SEO</option>
+        <option value="Google Ads">Google Ads</option>
+        <option value="SMM">Social Media Marketing</option>
+      </select>
+
+      <button type="submit" id="submit-lead">Submit</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  © 2026 Good One
+</footer>
 
 </body>
 </html>
+
