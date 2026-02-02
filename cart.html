@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Add to Cart - Good One</title>
-
-  <!-- GTM CODE WILL BE ADDED HERE LATER -->
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,35 +19,30 @@
   <div class="card">
     <h2>Select Services</h2>
 
-    <button id="add-seo" onclick="addToCart('SEO Package')">
-      Add SEO Package
-    </button>
-    <br><br>
+    <div class="cart-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png">
+      <button id="add-seo" onclick="addToCart('SEO Package')">Add SEO Package</button>
+    </div>
 
-    <button id="add-ads" onclick="addToCart('Google Ads Package')">
-      Add Google Ads Package
-    </button>
-    <br><br>
+    <div class="cart-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png">
+      <button id="add-ads" onclick="addToCart('Google Ads Package')">Add Google Ads Package</button>
+    </div>
 
-    <a href="lead-form.html" class="btn" id="proceed-lead">
-      Proceed to Lead Form
-    </a>
+    <br>
+    <a href="lead-form.html" class="btn" id="proceed-lead">Proceed to Lead Form</a>
   </div>
 </div>
 
-<footer>
-  © 2026 Good One
-</footer>
+<footer>© 2026 Good One</footer>
 
 <script>
   window.dataLayer = window.dataLayer || [];
-
   function addToCart(serviceName) {
     window.dataLayer.push({
       event: 'add_to_cart',
       service_name: serviceName
     });
-
     alert(serviceName + ' added to cart');
   }
 </script>
