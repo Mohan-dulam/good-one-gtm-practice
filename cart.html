@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <title>Add to Cart - Good One</title>
   <link rel="stylesheet" href="style.css">
+
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5X79N7XJ');</script>
-<!-- End Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5X79N7XJ');
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
+
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X79N7XJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X79N7XJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X79N7XJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <header>
@@ -35,14 +41,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="card">
     <h2>Select Services</h2>
 
+    <!-- SEO Package -->
     <div class="cart-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png">
-      <button id="add-seo" onclick="addToCart('SEO Package')">Add SEO Package</button>
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png" alt="SEO">
+      <button id="add-seo">Add SEO Package</button>
     </div>
 
+    <!-- Google Ads Package -->
     <div class="cart-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png">
-      <button id="add-ads" onclick="addToCart('Google Ads Package')">Add Google Ads Package</button>
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Google Ads">
+      <button id="add-ads">Add Google Ads Package</button>
     </div>
 
     <br>
@@ -54,13 +62,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
   window.dataLayer = window.dataLayer || [];
+
   function addToCart(serviceName) {
-    window.dataLayer.push({
-      event: 'add_to_cart',
-      service_name: serviceName
+    dataLayer.push({
+      event: "add_to_cart",
+      ecommerce: {
+        items: [{
+          item_name: serviceName,
+          item_category: "Services",
+          item_brand: "Good One",
+          quantity: 1
+        }]
+      }
     });
-    alert(serviceName + ' added to cart');
+
+    alert(serviceName + " added to cart");
   }
+
+  document.getElementById("add-seo").addEventListener("click", function () {
+    addToCart("SEO Package");
+  });
+
+  document.getElementById("add-ads").addEventListener("click", function () {
+    addToCart("Google Ads Package");
+  });
 </script>
 
 </body>
